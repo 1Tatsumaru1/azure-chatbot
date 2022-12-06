@@ -30,15 +30,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
         
-      #- name: Run unit tests
-      #  env:
-      #    MS_APP_ID: ${{ secrets.MS_APP_ID }}
-      #    MS_APP_PASSWORD: ${{ secrets.MS_APP_PASSWORD }}
-      #    LUIS_APP_ID: ${{ secrets.LUIS_APP_ID }}
-      #    LUIS_API_KEY: ${{ secrets.LUIS_API_KEY }}
-      #    LUIS_API_HOSTNAME: ${{ secrets.LUIS_API_HOSTNAME }}
-      #    APP_INSIGHT_INSTRUMENTATION_KEY: ${{ secrets.APP_INSIGHT_INSTRUMENTATION_KEY }}
-      #  run: python -m unittest tests/unit_test.py
+      # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
@@ -68,4 +60,4 @@ jobs:
         with:
           app-name: 'p10-flightbot-appservice'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F232977ED3844B45B95F3B42139F817F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A226E3BD198C4699A68A756190CF3606 }}
